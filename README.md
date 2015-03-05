@@ -25,21 +25,21 @@ Outputs (output10.txt and myOutput.txt):
   - Process'ID that triggered the event;
   
   For the process creation event:
-  - Bound type: if the process is CPU Bound (10000-20000 microseconds long) or I/O bound (2000-4000 microseconds long);
-  - Total CPU burst;
-  - Current CPU burst;
-  - Time when the next process will be created
+    - Bound type: if the process is CPU Bound (10000-20000 microseconds long) or I/O bound (2000-4000 microseconds long);
+    - Total CPU burst;
+    - Current CPU burst;
+    - Time when the next process will be created
   
   For the event that put the process on CPU:
-  - Current CPU burst;
-  - CPU time remaining
+    - Current CPU burst;
+    - CPU time remaining
   
   For I/O interruption event:
-  - Service time for I/O operations made by that process;
+    - Service time for I/O operations made by that process;
   
   For Quantum Expiration event:
-  - Total time of CPU utilized by that process so far; 
-  - Total CPU time remaining;
+    - Total time of CPU utilized by that process so far; 
+    - Total CPU time remaining;
 
 
 
