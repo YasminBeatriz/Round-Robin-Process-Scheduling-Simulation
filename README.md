@@ -9,7 +9,7 @@ This simulator was programmed using C language.
 
 In Round Robin (which is a preemptive scheduling algorithm), each process stays on the CPU for its execution by one and no more than 1 quantum, which have an arbitrary value. When the quantum time expires, the current running process is preempted from the CPU and goes back to the end of the Ready Queue, and the next process waiting in the Ready Queue is picked up right away. 
 
-Inputs (params10.txt): 
+INPUTS (params10.txt): 
 
   - Total Simulation time (seconds);
   - Quantum's size (microseconds);
@@ -19,7 +19,8 @@ Inputs (params10.txt):
   - Percentage of I/O bound processes (0-100);
   - average I/O service time (microseconds);
   
-Outputs (output10.txt and myOutput.txt):
+OUTPUTS (output10.txt and myOutput.txt):
+
 Standard:
   - Event type;
   - Time that the event was created;
