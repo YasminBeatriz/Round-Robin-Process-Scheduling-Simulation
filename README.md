@@ -9,7 +9,7 @@ This simulator was programmed using C language.
 
 In Round Robin (which is a preemptive scheduling algorithm), each process stays on the CPU for its execution by one and no more than 1 quantum, which have an arbitrary value. When the quantum time expires, the current running process is preempted from the CPU and goes back to the end of the Ready Queue, and the next process waiting in the Ready Queue is picked up right away. 
 
-The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code in the following files: 
+The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Note that even the CPU will be treated as a queue with size = 1. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code in the following files: 
 
 Header files: LinkedList.h, Queue.h and PriorityQueue.h
 Source Code: LinkedList.c, Queue.c and PriorityQueue.c
@@ -18,7 +18,17 @@ The main_program.c file consists on a while loop that executes while current sim
 A first new Process event is created outside the loop to start the simulation.
 When the loop begins, one event will be dequeued from the Event's Queue and processed following the 4 situations based on its type:
 
-NEW PROCESS: A new process is created
+NEW PROCESS: A new process will be created, and all random information that is needed will be provided for that process. Right after that, the process will be placed at the Ready Queue. If the CPU is empty, this event will trigger an new READY-CPU event to place that new process on the CPU.
+
+READY-CPU: This event means that the scheduler will move the first process in the Ready Queue to the CPU, that at the moment is empty. 
+- If the process is CPU-bound, its current CPU burst is longer than the quantum length so it will trigger a new QUANTUM EXPIRATION event at the time now + quantum; 
+- If it is I/O bound, its current CPU burst is shorter than the quantum so it will trigger a new I/O INTERRUPT event at the time now + current CPU burst;
+
+I/O INTERRUPT:
+
+FINISHED IO:
+
+PROCESS FINISHED:
 
 
 INPUTS (params10.txt): 
