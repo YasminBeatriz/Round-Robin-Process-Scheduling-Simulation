@@ -12,6 +12,7 @@ In Round Robin (which is a preemptive scheduling algorithm), each process stays 
 The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Note that even the CPU will be treated as a queue with size = 1. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code in the following files: 
 
 Header files: LinkedList.h, Queue.h and PriorityQueue.h
+
 Source Code: LinkedList.c, Queue.c and PriorityQueue.c
 
 The main_program.c file consists on a while loop that executes while current simulation time is less than total simulation time.
@@ -65,12 +66,3 @@ For I/O interruption event:
 For Quantum Expiration event:
   - Total time of CPU utilized by that process so far; 
   - Total CPU time remaining;
-
-
-
-
-
-
-
-
-
