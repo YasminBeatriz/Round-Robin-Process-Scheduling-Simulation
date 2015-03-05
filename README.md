@@ -9,6 +9,18 @@ This simulator was programmed using C language.
 
 In Round Robin (which is a preemptive scheduling algorithm), each process stays on the CPU for its execution by one and no more than 1 quantum, which have an arbitrary value. When the quantum time expires, the current running process is preempted from the CPU and goes back to the end of the Ready Queue, and the next process waiting in the Ready Queue is picked up right away. 
 
+The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code in the following files: 
+
+Header files: LinkedList.h, Queue.h and PriorityQueue.h
+Source Code: LinkedList.c, Queue.c and PriorityQueue.c
+
+The main_program.c file consists on a while loop that executes while current simulation time is less than total simulation time.
+A first new Process event is created outside the loop to start the simulation.
+When the loop begins, one event will be dequeued from the Event's Queue and processed following the 4 situations based on its type:
+
+NEW PROCESS: A new process is created
+
+
 INPUTS (params10.txt): 
 
   - Total Simulation time (seconds);
@@ -43,10 +55,6 @@ For Quantum Expiration event:
   - Total time of CPU utilized by that process so far; 
   - Total CPU time remaining;
 
-The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code in the following files: 
-
-Header files: LinkedList.h, Queue.h and PriorityQueue.h
-Source Code: LinkedList.c, Queue.c and PriorityQueue.c
 
 
 
