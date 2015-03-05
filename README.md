@@ -16,7 +16,7 @@ Source Code: LinkedList.c, Queue.c and PriorityQueue.c
 
 The main_program.c file consists on a while loop that executes while current simulation time is less than total simulation time.
 A first new Process event is created outside the loop to start the simulation.
-When the loop begins, one event will be dequeued from the Event's Queue and processed following the 4 situations based on its type:
+When the loop begins, one event will be dequeued from the Event's Queue, the time 'now' is updated with the event's time, and the event will be processed according to the following 5 situations based on its type:
 
 NEW PROCESS: A new process will be created, and all random information that is needed will be provided for that process. Right after that, the process will be placed at the Ready Queue. If the CPU is empty, this event will trigger an new READY-CPU event to place that new process on the CPU.
 
@@ -24,12 +24,13 @@ READY-CPU: This event means that the scheduler will move the first process in th
 - If the process is CPU-bound, its current CPU burst is longer than the quantum length so it will trigger a new QUANTUM EXPIRATION event at the time now + quantum; 
 - If it is I/O bound, its current CPU burst is shorter than the quantum so it will trigger a new I/O INTERRUPT event at the time now + current CPU burst;
 
-I/O INTERRUPT:
+QUANTUM EXPIRATION: When a process is running and the quantum time expires, this process will be removed from CPU and place back at the end of Ready Queue. That will trigger another READY-CPU event because now the CPU is empty so the next process in the line can take the CPU and execute its instructions.
 
-FINISHED IO:
+I/O INTERRUPT: This event means that a process need to leave the CPU to perform some I/O operations. The process now is placed on an I/O queue. A new FINISHED I/O event is triggered at the time now + process's I/O service time.
 
-PROCESS FINISHED:
+FINISHED I/O: When a process finishes its I/O operations, it will be placed at the end of Ready Queue to wait until it gets on the CPU again to resume its execution.
 
+PROCESS FINISHED: When a process finishes, it is removed from the CPU or the Ready Queue and terminated.
 
 INPUTS (params10.txt): 
 
