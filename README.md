@@ -17,7 +17,7 @@ Source Code: LinkedList.c, Queue.c and PriorityQueue.c
 
 The main_program.c file consists on a while loop that executes while current simulation time is less than total simulation time.
 A first new Process event is created outside the loop to start the simulation.
-When the loop begins, one event will be dequeued from the Event's Queue, the time 'now' is updated with the event's time, and the event will be processed according to the following 5 situations based on its type:
+When the loop begins, one event will be dequeued from the Event's Queue, the time 'now' is updated with the event's time, and the event will be processed according to the following 6 situations based on its type:
 
 NEW PROCESS: A new process will be created, and all random information that is needed will be provided for that process. Right after that, the process will be placed at the Ready Queue. If the CPU is empty, this event will trigger an new READY-CPU event to place that new process on the CPU.
 
@@ -32,6 +32,10 @@ I/O INTERRUPT: This event means that a process need to leave the CPU to perform 
 FINISHED I/O: When a process finishes its I/O operations, it will be placed at the end of Ready Queue to wait until it gets on the CPU again to resume its execution.
 
 PROCESS FINISHED: When a process finishes, it is removed from the CPU or the Ready Queue and terminated.
+
+Each time that an event is triggered, it is placed on the Event Queue until it will be dequeued in the next loop's execution and continuing the simulation.
+
+The program also provides a set of data to show an overall performance of the simulation.
 
 INPUTS (params10.txt): 
 
