@@ -29,11 +29,11 @@ For the process creation event:
   - Bound type: if the process is CPU Bound (10000-20000 microseconds long) or I/O bound (2000-4000 microseconds long);
   - Total CPU burst;
   - Current CPU burst;
-  - Time when the next process will be created
+  - Time when the next process will be created;
   
 For the event that put the process on CPU:
   - Current CPU burst;
-  - CPU time remaining
+  - CPU time remaining;
   
 For I/O interruption event:
   - Service time for I/O operations made by that process;
@@ -41,6 +41,18 @@ For I/O interruption event:
 For Quantum Expiration event:
   - Total time of CPU utilized by that process so far; 
   - Total CPU time remaining;
+
+The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code on 
+
+Header files:
+- LinkedList.h
+- Queue.h
+- PriorityQueue.h
+
+Source Code:
+- LinkedList.c
+- Queue.c
+- PriorityQueue.c
 
 
 
