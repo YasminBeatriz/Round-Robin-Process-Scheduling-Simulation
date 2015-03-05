@@ -7,7 +7,7 @@ The project consistis in simulating a Process scheduling alghorithm used by some
 
 This simulator was programmed using C language. 
 
-In Round Robin (which is a preemptive scheduling algorithm), each process stays on the CPU for its execution by one and no more than 1 interval called quantum, which have an arbitrary value. When the quantum time expires, the current running process is preempted from the CPU and goes back to the end of the Ready Queue, and the next process waiting in the Ready Queue is picked up right away. 
+In Round Robin (which is a preemptive scheduling algorithm), each process stays on the CPU for its execution by one and no more than 1 interval called quantum, which has an arbitrary value. When the quantum time expires, the current running process is preempted from the CPU and goes back to the end of the Ready Queue, and the next process waiting in the Ready Queue is picked up right away. 
 
 The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Note that even the CPU will be treated as a queue with size = 1. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code in the following files: 
 
