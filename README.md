@@ -42,17 +42,10 @@ For Quantum Expiration event:
   - Total time of CPU utilized by that process so far; 
   - Total CPU time remaining;
 
-The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code on 
+The simulation uses a Regular Queue to manage the processes, and a Priority Queue to manage the events according to the event's creation time. Both Regular and Priority Queues are implemented using Linked Lists and one can see the code in the following files: 
 
-Header files:
-- LinkedList.h
-- Queue.h
-- PriorityQueue.h
-
-Source Code:
-- LinkedList.c
-- Queue.c
-- PriorityQueue.c
+Header files: LinkedList.h, Queue.h and PriorityQueue.h
+Source Code: LinkedList.c, Queue.c and PriorityQueue.c
 
 
 
