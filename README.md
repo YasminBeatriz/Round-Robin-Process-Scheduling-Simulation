@@ -33,9 +33,9 @@ FINISHED I/O: When a process finishes its I/O operations, it will be placed at t
 
 PROCESS FINISHED: When a process finishes, it is removed from the CPU or the Ready Queue and terminated.
 
-Each time that an event is triggered, it is placed on the Event Queue until it will be dequeued in the next loop's execution and thus continuing the simulation.
+Each time that an event is triggered, it is placed on the Event Queue until it will be dequeued in the next loop's execution and thus continue the simulation.
 
-The program also provides a set of data to show an overall performance of the simulation.
+The program also provides a set of data to show at the end an overall performance of the simulation.
 
 INPUTS (params10.txt): 
 
